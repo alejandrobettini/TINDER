@@ -35,7 +35,7 @@ When(/^iniciar sesion en Tinder con usuario "(.*)" y contraseña "(.*)"$/, async
 
 Then('mandar corazones', async function () {
     
-    for (var i=0; i<=100;i++){
+    for (var i=0; i<=700;i++){
       
         try { 
         await this.driver.wait(until.elementLocated(By.xpath(WElements.WEcorazon)));

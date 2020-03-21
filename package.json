@@ -1,10 +1,9 @@
 {
   "name": "tinder",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cucumber-js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +20,7 @@
     "chromedriver": "^80.0.1",
     "cucumber": "^6.0.5",
     "selenium-webdriver": "^4.0.0-alpha.7"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
