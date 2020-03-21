@@ -1,0 +1,25 @@
+{
+  "name": "tinder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alejandrobettini/TINDER.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alejandrobettini/TINDER/issues"
+  },
+  "homepage": "https://github.com/alejandrobettini/TINDER#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chromedriver": "^80.0.1",
+    "cucumber": "^6.0.5",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  }
+}
