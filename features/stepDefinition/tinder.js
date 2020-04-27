@@ -16,10 +16,12 @@ await this.driver.get ('http://www.tinder.com');
 
 When(/^iniciar sesion en Tinder con usuario "(.*)" y contraseña "(.*)"$/, async function (usuario, contraseña) {
     await this.driver.sleep(6000);
-    // si aparece este elemento hacer click, sino buscar el otro elemento y clickearlo
-   // await this.driver.wait(until.elementLocated(By.xpath(WElements.WEmasOpciones)));
-    //var WEmasOpciones = await this.driver.findElement(By.xpath(WElements.WEmasOpciones)); 
-    //await WEmasOpciones.click();
+    try { 
+    await this.driver.wait(until.elementLocated(By.xpath(WElements.WEmasOpciones)));
+    var WEmasOpciones = await this.driver.findElement(By.xpath(WElements.WEmasOpciones)); 
+    await WEmasOpciones.click();
+} catch (error) {     
+}
 
     await this.driver.wait(until.elementLocated(By.xpath(WElements.WEiniciarSesionFb)));
     await this.driver.sleep(4000);
@@ -50,10 +52,12 @@ When(/^iniciar sesion en Tinder con usuario "(.*)" y contraseña "(.*)"$/, async
     var WEacepto = await this.driver.findElement(By.xpath(WElements.WEacepto)); 
     await WEacepto.click();
    
-    //await this.driver.wait(until.elementLocated(By.xpath(WElements.WEbotonNO)));
-    //var WEbotonNO = await this.driver.findElement(By.xpath(WElements.WEbotonNO)); 
-    //await WEbotonNO.click();
-    
+    try{
+    await this.driver.wait(until.elementLocated(By.xpath(WElements.WEbotonNO)));
+    var WEbotonNO = await this.driver.findElement(By.xpath(WElements.WEbotonNO)); 
+    await WEbotonNO.click();
+} catch (error) {     
+}
 });
 
 Then('mandar corazones', async function () {
