@@ -2,7 +2,7 @@ let WElements = {
 
     WEemail: '//*[@id="email"]',
     WEcontraseña: '//*[@id="pass"]',
-    WEiniciarSesionFb: '//button[@aria-label="Inicia sesión con Facebook"]',
+    WEiniciarSesionFb: '//button[@aria-label="Inicia sesión con Facebook"]', //button[@aria-label="Inicia sesión con Facebook"]
     WEentrar: '//input[@value="Entrar"]',
     WEcorazon: '//button[@aria-label="Me gusta"]',
     WEsuperlike: '//button[@aria-label="Super Like"]',
@@ -12,6 +12,7 @@ let WElements = {
     WEhabilitar: '//button[@type="button"and @aria-label="Habilitar"]',
     WEacepto: '//button[@type="button" and @draggable="false"]/span[(.="Acepto")]',
     WEbotonNO: '//span[.= "No, gracias"]',
+    WEmasOpciones: '//button[.="Más opciones"]',
 };
 
 module.exports = {
