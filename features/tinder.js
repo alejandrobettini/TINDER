@@ -8,9 +8,9 @@ const { WElements} = require(`${process.cwd()}/pages/tinder.js`);
 const { assert, expect} = require('chai');
 var nameLike;
 
-
+//usingServer('https://5cae3f60.ngrok.io/wd/hub')
 Given ('open Tinder', async function () {
-this.driver = await new webdriver.Builder().usingServer('http://bd34eee6.ngrok.io/wd/hub/').forBrowser('chrome').build();
+this.driver = await new webdriver.Builder().usingServer('https://5cae3f60.ngrok.io/wd/hub').forBrowser('chrome').build();
 await this.driver.get ('http://www.tinder.com');
 });
 
