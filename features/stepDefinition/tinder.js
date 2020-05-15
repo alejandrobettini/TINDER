@@ -3,14 +3,20 @@ const { Given, When, Then, setDefaultTimeout } = require ('cucumber');
 var webdriver = require ('selenium-webdriver');
 require('chromedriver');
 var driver;
-setDefaultTimeout(1000000);
+setDefaultTimeout(100000);
 const { WElements} = require(`${process.cwd()}/pages/tinder.js`);
 const { assert, expect} = require('chai');
 var nameLike;
 
+function randomTime (min, max){
+
+    return Math.floor (Math.random() * (max-min + 1) + min);
+
+};
+
 //usingServer('https://5cae3f60.ngrok.io/wd/hub')
 Given ('open Tinder', async function () {
-this.driver = await new webdriver.Builder().usingServer('https://5cae3f60.ngrok.io/wd/hub').forBrowser('chrome').build();
+this.driver = await new webdriver.Builder().forBrowser('chrome').build();
 await this.driver.get ('http://www.tinder.com');
 });
 
@@ -23,6 +29,7 @@ When(/^iniciar sesion en Tinder con usuario "(.*)" y contraseña "(.*)"$/, async
 } catch (error) {     
 }
 
+    await this.driver.sleep(4000);
     await this.driver.wait(until.elementLocated(By.xpath(WElements.WEiniciarSesionFb)));
     await this.driver.sleep(4000);
     var WEiniciarSesionFb = await this.driver.findElement(By.xpath(WElements.WEiniciarSesionFb)); 
@@ -51,23 +58,24 @@ When(/^iniciar sesion en Tinder con usuario "(.*)" y contraseña "(.*)"$/, async
     await this.driver.wait(until.elementLocated(By.xpath(WElements.WEacepto)));
     var WEacepto = await this.driver.findElement(By.xpath(WElements.WEacepto)); 
     await WEacepto.click();
-   
+   /*
     try{
     await this.driver.wait(until.elementLocated(By.xpath(WElements.WEbotonNO)));
     var WEbotonNO = await this.driver.findElement(By.xpath(WElements.WEbotonNO)); 
     await WEbotonNO.click();
 } catch (error) {     
 }
+*/
 });
 
+
 Then('mandar corazones', async function () {
-    
+    await this.driver.sleep(6000);
     for (var i=0; i<=5000;i++){
-      
         try { 
         await this.driver.wait(until.elementLocated(By.xpath(WElements.WEcorazon)));
         let WEcorazon = await this.driver.findElement(By.xpath(WElements.WEcorazon));
-        await this.driver.sleep(300);
+        await this.driver.sleep(randomTime(200, 300));
         await WEcorazon.click();
 
        } catch (error) {

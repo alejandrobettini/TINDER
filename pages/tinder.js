@@ -10,7 +10,7 @@ let WElements = {
     
     WEpermitir: '//button[@type="button" and @aria-label="Permitir"]', 
     WEhabilitar: '//button[@type="button"and @aria-label="Habilitar"]',
-    WEacepto: '//button[@type="button" and @draggable="false"]/span[(.="Acepto")]',
+    WEacepto: '//span[(.="Acepto")]',
     WEbotonNO: '//span[.= "No, gracias"]',
     WEmasOpciones: '//button[.="Más opciones"]',
 };
