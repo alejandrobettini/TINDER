@@ -1,8 +1,9 @@
 let WElements = {
 
+    WEingresar: '//button[contains (. , "Inicia sesión")]',
     WEemail: '//*[@id="email"]',
     WEcontraseña: '//*[@id="pass"]',
-    WEiniciarSesionFb: '//button[@aria-label="Inicia sesión con Facebook"]', //button[@aria-label="Inicia sesión con Facebook"]
+    WEiniciarSesionFb: '//button[@aria-label="Inicia sesión con Facebook"]', 
     WEentrar: '//input[@value="Entrar"]',
     WEcorazon: '//button[@aria-label="Me gusta"]',
     WEsuperlike: '//button[@aria-label="Super Like"]',
@@ -13,6 +14,7 @@ let WElements = {
     WEacepto: '//span[(.="Acepto")]',
     WEbotonNO: '//span[.= "No, gracias"]',
     WEmasOpciones: '//button[.="Más opciones"]',
+    WEnoGracias: '//button/span[contains (text(), "No me interesa")]',
 };
 
 module.exports = {

@@ -3,10 +3,10 @@ const { Given, When, Then, setDefaultTimeout } = require ('cucumber');
 var webdriver = require ('selenium-webdriver');
 require('chromedriver');
 var driver;
-setDefaultTimeout(100000);
+setDefaultTimeout(10000000); 
 const { WElements} = require(`${process.cwd()}/pages/tinder.js`);
 const { assert, expect} = require('chai');
-var nameLike;
+var mgAdar = 2000;
 
 function randomTime (min, max){
 
@@ -21,22 +21,27 @@ await this.driver.get ('http://www.tinder.com');
 });
 
 When(/^iniciar sesion en Tinder con usuario "(.*)" y contraseña "(.*)"$/, async function (usuario, contraseña) {
-    await this.driver.sleep(6000);
-    try { 
-    await this.driver.wait(until.elementLocated(By.xpath(WElements.WEmasOpciones)));
-    var WEmasOpciones = await this.driver.findElement(By.xpath(WElements.WEmasOpciones)); 
-    await WEmasOpciones.click();
-} catch (error) {     
-}
-
-    await this.driver.sleep(4000);
-    await this.driver.wait(until.elementLocated(By.xpath(WElements.WEiniciarSesionFb)));
-    await this.driver.sleep(4000);
-    var WEiniciarSesionFb = await this.driver.findElement(By.xpath(WElements.WEiniciarSesionFb)); 
-    await WEiniciarSesionFb.click();
     
+    await this.driver.wait(until.elementLocated(By.xpath(WElements.WEingresar)));
+    var WEIngresar = await this.driver.findElement(By.xpath(WElements.WEingresar));
+    await WEIngresar.click();
+
+   await this.driver.sleep(6000);
+    try{
+        var WEmasOpciones = await this.driver.findElement(By.xpath(WElements.WEmasOpciones));
+        await WEmasOpciones.click();
+    }catch{
+        console.log ("no fue encontrado el boton mas opciones");
+    }finally{
+        await this.driver.sleep(2000);
+        var WEiniciarSesionFb = await this.driver.findElement(By.xpath(WElements.WEiniciarSesionFb));
+        await WEiniciarSesionFb.click();
+    };
+
+    await this.driver.sleep(2000);
     let handles = await this.driver.getAllWindowHandles();
     await this.driver.switchTo().window(handles[1]);
+    
 
     await this.driver.wait(until.elementLocated(By.xpath(WElements.WEemail)));
     var WEemail = await this.driver.findElement(By.xpath(WElements.WEemail));
@@ -70,16 +75,43 @@ When(/^iniciar sesion en Tinder con usuario "(.*)" y contraseña "(.*)"$/, async
 
 
 Then('mandar corazones', async function () {
+    var total = 0;
+    var error = 0;
+    
+
     await this.driver.sleep(6000);
-    for (var i=0; i<=5000;i++){
+   /* for (var y=0; y=10; y++){
+        try{
+            await this.driver.wait(until.elementLocated(By.xpath(WE.WEnoGracias)));
+            var WEnoGracias = await this.driver(findElement(By.xpath(WE.WEnoGracias)));
+            await WEnoGracias.click ();
+        }catch{
+            console.log ('no salio la pop up');
+
+        }finally{
+            await this.driver.wait(until.elementLocated(By.xpath(WElements.WEcorazon)));
+            let WEcorazon = await this.driver.findElement(By.xpath(WElements.WEcorazon));
+            await this.driver.sleep(randomTime(200, 300));
+            await WEcorazon.click();
+        }
+    };*/
+   
+    for (var i=0; i<=mgAdar;i++){
         try { 
         await this.driver.wait(until.elementLocated(By.xpath(WElements.WEcorazon)));
         let WEcorazon = await this.driver.findElement(By.xpath(WElements.WEcorazon));
         await this.driver.sleep(randomTime(200, 300));
         await WEcorazon.click();
 
-       } catch (error) {
+       } catch{
+           error ++;
         
+       }finally{
+        console.log ('mg dados: ', + total);
+        total ++;;
        }
-    }
+    };
+
+    console.info ('El total de los MG dados fue de: ', + total);
+    console.error ('El total de los errores fue de: ', + error);
 });
