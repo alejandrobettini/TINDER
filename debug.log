@@ -327,3 +327,47 @@
 [0819/151921.953:ERROR:exception_snapshot_win.cc(98)] thread ID 4772 not found in process
 [0819/151922.977:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
 [0819/151922.978:ERROR:exception_snapshot_win.cc(98)] thread ID 1828 not found in process
+[0909/223019.419:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0909/223019.505:ERROR:exception_snapshot_win.cc(99)] thread ID 7208 not found in process
+[0909/223019.334:ERROR:scoped_process_suspend.cc(31)] NtSuspendProcess: Se intentó obtener acceso a un proceso que está cerrándose. (0xc000010a)
+[0909/223019.505:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Se intentó obtener acceso a un proceso que está cerrándose. (0xc000010a)
+[0909/223019.357:ERROR:scoped_process_suspend.cc(31)] NtSuspendProcess: Se intentó obtener acceso a un proceso que está cerrándose. (0xc000010a)
+[0909/223019.469:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0909/223019.506:ERROR:exception_snapshot_win.cc(99)] thread ID 6968 not found in process
+[0909/223019.506:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Se intentó obtener acceso a un proceso que está cerrándose. (0xc000010a)
+[0909/223019.505:ERROR:process_info.cc(118)] ReadProcessMemory bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::PEB<crashpad::process_types::internal::Traits32>]: Sólo se completó una parte de una solicitud ReadProcessMemory o WriteProcessMemory. (0x12B)
+[0909/223019.527:ERROR:process_info.cc(551)] ReadProcessData failed
+[0909/223019.514:ERROR:process_info.cc(98)] ReadProcessMemory UNICODE_STRING: Sólo se completó una parte de una solicitud ReadProcessMemory o WriteProcessMemory. (0x12B)
+[0909/223019.542:ERROR:process_info.cc(118)] ReadProcessMemory bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::LDR_DATA_TABLE_ENTRY<crashpad::process_types::internal::Traits32>]: Sólo se completó una parte de una solicitud ReadProcessMemory o WriteProcessMemory. (0x12B)
+[0909/223019.542:ERROR:process_info.cc(329)] VirtualQueryEx: Acceso denegado. (0x5)
+[0909/223019.543:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0909/225654.024:ERROR:scoped_process_suspend.cc(31)] NtSuspendProcess: Se intentó obtener acceso a un proceso que está cerrándose. (0xc000010a)
+[0909/225654.062:ERROR:process_info.cc(118)] ReadProcessMemory bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::PEB<crashpad::process_types::internal::Traits32>]: Sólo se completó una parte de una solicitud ReadProcessMemory o WriteProcessMemory. (0x12B)
+[0909/225654.063:ERROR:process_info.cc(551)] ReadProcessData failed
+[0909/225654.098:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0909/225654.100:ERROR:exception_snapshot_win.cc(99)] thread ID 2444 not found in process
+[0909/225856.389:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0909/225856.390:ERROR:exception_snapshot_win.cc(99)] thread ID 8324 not found in process
+[0909/225856.419:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0909/225856.419:ERROR:exception_snapshot_win.cc(99)] thread ID 8508 not found in process
+[0909/225856.457:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0909/225856.458:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0909/225856.458:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0909/225856.458:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0909/225856.458:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0909/225856.458:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0909/225856.458:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0909/225856.458:ERROR:exception_snapshot_win.cc(99)] thread ID 8464 not found in process
+[0909/225856.533:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0909/225856.533:ERROR:exception_snapshot_win.cc(99)] thread ID 3900 not found in process
+[0909/225856.547:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0909/225856.547:ERROR:exception_snapshot_win.cc(99)] thread ID 7476 not found in process
+[0909/230235.381:ERROR:scoped_process_suspend.cc(31)] NtSuspendProcess: Se intentó obtener acceso a un proceso que está cerrándose. (0xc000010a)
+[0909/230235.382:ERROR:process_info.cc(118)] ReadProcessMemory bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::PEB<crashpad::process_types::internal::Traits32>]: Sólo se completó una parte de una solicitud ReadProcessMemory o WriteProcessMemory. (0x12B)
+[0909/230235.382:ERROR:process_info.cc(551)] ReadProcessData failed
+[0909/230235.382:ERROR:scoped_process_suspend.cc(31)] NtSuspendProcess: Se intentó obtener acceso a un proceso que está cerrándose. (0xc000010a)
+[0909/230235.383:ERROR:process_info.cc(118)] ReadProcessMemory bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::PEB<crashpad::process_types::internal::Traits32>]: Sólo se completó una parte de una solicitud ReadProcessMemory o WriteProcessMemory. (0x12B)
+[0909/230235.383:ERROR:process_info.cc(551)] ReadProcessData failed
+[0909/230235.383:ERROR:scoped_process_suspend.cc(31)] NtSuspendProcess: Se intentó obtener acceso a un proceso que está cerrándose. (0xc000010a)
+[0909/230235.383:ERROR:process_info.cc(118)] ReadProcessMemory bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::PEB<crashpad::process_types::internal::Traits32>]: Sólo se completó una parte de una solicitud ReadProcessMemory o WriteProcessMemory. (0x12B)
+[0909/230235.383:ERROR:process_info.cc(551)] ReadProcessData failed

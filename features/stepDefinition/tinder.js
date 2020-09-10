@@ -96,22 +96,37 @@ Then('mandar corazones', async function () {
         }
     };*/
    
-    for (var i=0; i<=mgAdar;i++){
+    for (var i=0; i<=12;i++){
+        //span[contains (text(), 'No me interesa')]
+        
         try { 
+           // let handles = await this.driver.getAllWindowHandles();
+           // await this.driver.switchTo().window(handles[1])
+           await this.driver.sleep(1000);
+            var noMeInteresa = await this.driver.findElement(By.xpath("//div[@id='modal-manager']/div/div/div[2]/button[2]"));
+            await noMeInteresa.click();
+           // await this.driver.switchTo().window(handles[0]);
+        } catch{
+            console.log ('no se encontro el boton no me interesa');
+            
+        }finally{
+            await this.driver.wait(until.elementLocated(By.xpath(WElements.WEcorazon)));
+            let WEcorazon = await this.driver.findElement(By.xpath(WElements.WEcorazon));
+          //  await this.driver.sleep(randomTime(200, 300));
+            await WEcorazon.click();
+
+       }
+
+       
+    };
+    console.log('finalizo el primer ciclo for');
+    
+    for (var i=0; i<=mgAdar;i++){
         await this.driver.wait(until.elementLocated(By.xpath(WElements.WEcorazon)));
         let WEcorazon = await this.driver.findElement(By.xpath(WElements.WEcorazon));
-        await this.driver.sleep(randomTime(200, 300));
+        await this.driver.sleep(randomTime(300, 400));
         await WEcorazon.click();
-
-       } catch{
-           error ++;
-        
-       }finally{
-        console.log ('mg dados: ', + total);
-        total ++;;
-       }
-    };
-
+    }
     console.info ('El total de los MG dados fue de: ', + total);
     console.error ('El total de los errores fue de: ', + error);
 });
