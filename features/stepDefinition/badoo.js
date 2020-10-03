@@ -47,17 +47,38 @@ When ('buitreo corazones', async function (){
 
     var recuentoMg = 0;
     var i = 0;
-    while(i<mgAdar){
-await this.driver.wait(until.elementLocated(By.xpath(badoo.corazon)));
-var corazon = await this.driver.findElement(By.xpath(badoo.corazon));
-await this.driver.sleep(randomTime(200,350));
-await corazon.click();
+    var j = 0;
+    while(i<10){
+        try{
+            await this.driver.sleep(randomTime(5500,8550));
+            var recibirNotificacion = await this.driver.findElement(By.xpath(badoo.recibirNotificacion)).click();
+        }catch{
+
+        }finally{
+            await this.driver.wait(until.elementLocated(By.xpath(badoo.corazon)));
+            var corazon = await this.driver.findElement(By.xpath(badoo.corazon));
+            await this.driver.sleep(randomTime(200,350));
+            await corazon.click();
+            recuentoMg++;
+
+        }
 recuentoMg++;
 i++;
 
 
     }
-    console.log(recuentoMg);
+
+    console.log('finalizo el primer while de 10mg para capturar el error');
+
+    while(j<mgAdar){
+        await this.driver.wait(until.elementLocated(By.xpath(badoo.corazon)));
+        var corazon = await this.driver.findElement(By.xpath(badoo.corazon));
+        await this.driver.sleep(randomTime(200,350));
+        await corazon.click();
+        recuentoMg++;
+    }
+console.log(recuentoMg);
+    await this.driver.quit();
 });
 
 

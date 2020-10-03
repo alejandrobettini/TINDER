@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "tinder": "cucumber-js"
+    "chaja": " cucumber-js",
+    "tinder": "node ./node_modules/cucumber/bin/cucumber-js features/tinder.feature",
+    "badoo": "node ./node_modules/cucumber/bin/cucumber-js features/badoo.feature"
   },
   "repository": {
     "type": "git",

@@ -17,6 +17,7 @@ function randomTime (min, max){
 //usingServer('https://5cae3f60.ngrok.io/wd/hub')
 Given ('open Tinder', async function () {
 this.driver = await new webdriver.Builder().forBrowser('chrome').build();
+await this.driver.manage().window().maximize();
 await this.driver.get ('http://www.tinder.com');
 });
 
