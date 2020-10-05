@@ -15,6 +15,7 @@ let WElements = {
     WEbotonNO: '//span[.= "No, gracias"]',
     WEmasOpciones: '//button[.="Más opciones"]',
     WEnoGracias: '//button/span[contains (text(), "No me interesa")]',
+    WEnoSuperLike: '//div[@id="modal-manager"]//span[contains(text(), "No, gracias")]' //  otra opcion: //div[@id="modal-manager"]/div/div/button[2]
 };
 
 module.exports = {

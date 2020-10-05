@@ -6,7 +6,7 @@ var driver;
 setDefaultTimeout(10000000); 
 const { WElements} = require(`${process.cwd()}/pages/tinder.js`);
 const { assert, expect} = require('chai');
-var mgAdar = 2000;
+var mgAdar = 500;
 
 function randomTime (min, max){
 
@@ -81,21 +81,7 @@ Then('mandar corazones', async function () {
     
 
     await this.driver.sleep(6000);
-   /* for (var y=0; y=10; y++){
-        try{
-            await this.driver.wait(until.elementLocated(By.xpath(WE.WEnoGracias)));
-            var WEnoGracias = await this.driver(findElement(By.xpath(WE.WEnoGracias)));
-            await WEnoGracias.click ();
-        }catch{
-            console.log ('no salio la pop up');
 
-        }finally{
-            await this.driver.wait(until.elementLocated(By.xpath(WElements.WEcorazon)));
-            let WEcorazon = await this.driver.findElement(By.xpath(WElements.WEcorazon));
-            await this.driver.sleep(randomTime(200, 300));
-            await WEcorazon.click();
-        }
-    };*/
    
     for (var i=0; i<=12;i++){
         //span[contains (text(), 'No me interesa')]
@@ -110,7 +96,16 @@ Then('mandar corazones', async function () {
         } catch{
             console.log ('no se encontro el boton no me interesa');
             
-        }finally{
+        }
+        
+        try{
+            await this.driver.sleep(randomTime(600,900));
+           var WEnoSuperLike =  await this.driver.findElement(By.xpath(WElements.WEnoSuperLike));
+            await WEnoSuperLike.click();
+        }catch{
+            
+        }
+        finally{
             await this.driver.wait(until.elementLocated(By.xpath(WElements.WEcorazon)));
             let WEcorazon = await this.driver.findElement(By.xpath(WElements.WEcorazon));
           //  await this.driver.sleep(randomTime(200, 300));
@@ -127,6 +122,7 @@ Then('mandar corazones', async function () {
         let WEcorazon = await this.driver.findElement(By.xpath(WElements.WEcorazon));
         await this.driver.sleep(randomTime(300, 400));
         await WEcorazon.click();
+        total++;
     }
     console.info ('El total de los MG dados fue de: ', + total);
     console.error ('El total de los errores fue de: ', + error);
