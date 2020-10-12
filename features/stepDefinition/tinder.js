@@ -6,13 +6,15 @@ var driver;
 setDefaultTimeout(10000000); 
 const { WElements} = require(`${process.cwd()}/pages/tinder.js`);
 const { assert, expect} = require('chai');
-var mgAdar = 500;
+var mgAdar = 1000;
+var hoy = new Date();
 
 function randomTime (min, max){
 
     return Math.floor (Math.random() * (max-min + 1) + min);
 
 };
+
 
 //usingServer('https://5cae3f60.ngrok.io/wd/hub')
 Given ('open Tinder', async function () {
@@ -82,12 +84,12 @@ Then('mandar corazones', async function () {
 
     await this.driver.sleep(6000);
 
-   
-    for (var i=0; i<=12;i++){
-        //span[contains (text(), 'No me interesa')]
-        
+   try{
+       //span[contains (text(), 'No me interesa')]
+       for (var i=0; i<=12;i++){
+           
         try { 
-           // let handles = await this.driver.getAllWindowHandles();
+            // let handles = await this.driver.getAllWindowHandles();
            // await this.driver.switchTo().window(handles[1])
            await this.driver.sleep(1000);
             var noMeInteresa = await this.driver.findElement(By.xpath("//div[@id='modal-manager']/div/div/div[2]/button[2]"));
@@ -101,7 +103,7 @@ Then('mandar corazones', async function () {
         try{
             await this.driver.sleep(randomTime(600,900));
            var WEnoSuperLike =  await this.driver.findElement(By.xpath(WElements.WEnoSuperLike));
-            await WEnoSuperLike.click();
+           await WEnoSuperLike.click();
         }catch{
             
         }
@@ -110,10 +112,10 @@ Then('mandar corazones', async function () {
             let WEcorazon = await this.driver.findElement(By.xpath(WElements.WEcorazon));
           //  await this.driver.sleep(randomTime(200, 300));
             await WEcorazon.click();
-
-       }
-
-       
+            
+        }
+        
+        
     };
     console.log('finalizo el primer ciclo for');
     
@@ -124,6 +126,15 @@ Then('mandar corazones', async function () {
         await WEcorazon.click();
         total++;
     }
+}catch{
+    console.log('hubo algun problema desconocido en la ejecucion');
+}
+    
     console.info ('El total de los MG dados fue de: ', + total);
     console.error ('El total de los errores fue de: ', + error);
+    var final = new Date();
+    var duracion = (final.getTime() -  hoy.getTime());
+    var minutos = (duracion/60000);
+    console.log('el proceso tardo en ejecutarse: '+minutos);
+    console.log('la duracion: '+duracion);
 });
