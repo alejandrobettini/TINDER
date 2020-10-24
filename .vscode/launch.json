@@ -16,13 +16,13 @@
         },
 
         {
-            "name": "badoo",
+            "name": "fc",
             "type": "node",
             "request": "launch",
             "console": "integratedTerminal",
             "program": "${workspaceRoot}/node_modules/cucumber/bin/cucumber-js",
             "args": [
-                "${workspaceRoot}/features/badoo.feature",
+                "${workspaceRoot}/features/fc.feature",
             ]
         }
     ]

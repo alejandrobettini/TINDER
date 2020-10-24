@@ -6,7 +6,7 @@ var driver;
 setDefaultTimeout(10000000); 
 const { WElements} = require(`${process.cwd()}/pages/tinder.js`);
 const { assert, expect} = require('chai');
-var mgAdar = 1000;
+var mgAdar = 2500;
 var hoy = new Date();
 
 function randomTime (min, max){
@@ -135,6 +135,6 @@ Then('mandar corazones', async function () {
     var final = new Date();
     var duracion = (final.getTime() -  hoy.getTime());
     var minutos = (duracion/60000);
-    console.log('el proceso tardo en ejecutarse: '+minutos);
+    console.log('el proceso tardo en ejecutarse: '+minutos+' minutos');
     console.log('la duracion: '+duracion);
 });

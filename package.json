@@ -5,7 +5,8 @@
   "scripts": {
     "chaja": " cucumber-js",
     "tinder": "node ./node_modules/cucumber/bin/cucumber-js features/tinder.feature",
-    "badoo": "node ./node_modules/cucumber/bin/cucumber-js features/badoo.feature"
+    "badoo": "node ./node_modules/cucumber/bin/cucumber-js features/badoo.feature",
+    "fb": "node ./node_modules/cucumber/bin/cucumber-js features/fc.feature"
   },
   "repository": {
     "type": "git",
