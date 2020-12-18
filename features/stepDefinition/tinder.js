@@ -6,7 +6,7 @@ var driver;
 setDefaultTimeout(10000000); 
 const { WElements} = require(`${process.cwd()}/pages/tinder.js`);
 const { assert, expect} = require('chai');
-var mgAdar = 2500;
+var mgAdar = 5000;
 var hoy = new Date();
 
 function randomTime (min, max){
@@ -29,7 +29,7 @@ When(/^iniciar sesion en Tinder con usuario "(.*)" y contraseña "(.*)"$/, async
     var WEIngresar = await this.driver.findElement(By.xpath(WElements.WEingresar));
     await WEIngresar.click();
 
-   await this.driver.sleep(6000);
+   await this.driver.sleep(2000);
     try{
         var WEmasOpciones = await this.driver.findElement(By.xpath(WElements.WEmasOpciones));
         await WEmasOpciones.click();
@@ -53,6 +53,11 @@ When(/^iniciar sesion en Tinder con usuario "(.*)" y contraseña "(.*)"$/, async
     var WEcontraseña = await this.driver.findElement(By.xpath(WElements.WEcontraseña));
     await WEcontraseña.sendKeys(contraseña);
     await this.driver.findElement(By.xpath(WElements.WEentrar)).click();
+
+    try{
+await this.driver.sleep(2000);
+var confirmar = await this.driver.findElement(By.xpath('//button[@name="__CONFIRM__"]')).click();
+    }catch{}
     await this.driver.switchTo().window(handles[0]);
     
     await this.driver.wait(until.elementLocated(By.xpath(WElements.WEpermitir)));
@@ -91,7 +96,7 @@ Then('mandar corazones', async function () {
         try { 
             // let handles = await this.driver.getAllWindowHandles();
            // await this.driver.switchTo().window(handles[1])
-           await this.driver.sleep(1000);
+           await this.driver.sleep(2500);
             var noMeInteresa = await this.driver.findElement(By.xpath("//div[@id='modal-manager']/div/div/div[2]/button[2]"));
             await noMeInteresa.click();
            // await this.driver.switchTo().window(handles[0]);

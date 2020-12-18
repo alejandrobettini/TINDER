@@ -24,6 +24,17 @@
             "args": [
                 "${workspaceRoot}/features/fc.feature",
             ]
+        },
+
+        {
+            "name": "insta",
+            "type": "node",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "program": "${workspaceRoot}/node_modules/cucumber/bin/cucumber-js",
+            "args": [
+                "${workspaceRoot}/features/insta.feature",
+            ]
         }
     ]
 }
