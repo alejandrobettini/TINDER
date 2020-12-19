@@ -5,7 +5,7 @@ let WElements = {
     WEcontraseña: '//*[@id="pass"]',
     WEiniciarSesionFb: '//button[@aria-label="Inicia sesión con Facebook"]', 
     WEentrar: '//input[@value="Entrar"]',
-    WEcorazon: '//button[@aria-label="Me gusta"]',
+    WEcorazon: '//div[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/div[4]/button',
     WEsuperlike: '//button[@aria-label="Super Like"]',
     WErechazo: '//button[@aria-label="Nope"]',
     
@@ -15,7 +15,8 @@ let WElements = {
     WEbotonNO: '//span[.= "No, gracias"]',
     WEmasOpciones: '//button[.="Más opciones"]',
     WEnoGracias: '//button/span[contains (text(), "No me interesa")]',
-    WEnoSuperLike: '//div[@id="modal-manager"]//span[contains(text(), "No, gracias")]' //  otra opcion: //div[@id="modal-manager"]/div/div/button[2]
+    WEnoSuperLike: '//div[@id="modal-manager"]//span[contains(text(), "No, gracias")]', //  otra opcion: //div[@id="modal-manager"]/div/div/button[2]
+    WEcloseMatch: '//button[@title="Volver a Tinder"]'
 };
 
 module.exports = {

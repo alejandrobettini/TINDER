@@ -110,7 +110,7 @@ Then('mandar corazones', async function () {
            var WEnoSuperLike =  await this.driver.findElement(By.xpath(WElements.WEnoSuperLike));
            await WEnoSuperLike.click();
         }catch{
-            
+            console.log('no se encontro el boton de superlike')
         }
         finally{
             await this.driver.wait(until.elementLocated(By.xpath(WElements.WEcorazon)));
@@ -119,7 +119,6 @@ Then('mandar corazones', async function () {
             await WEcorazon.click();
             
         }
-        
         
     };
     console.log('finalizo el primer ciclo for');
