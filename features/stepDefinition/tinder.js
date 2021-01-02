@@ -100,18 +100,13 @@ Then('mandar corazones', async function () {
             var noMeInteresa = await this.driver.findElement(By.xpath("//div[@id='modal-manager']/div/div/div[2]/button[2]"));
             await noMeInteresa.click();
            // await this.driver.switchTo().window(handles[0]);
-        } catch{
-            console.log ('no se encontro el boton no me interesa');
-            
-        }
+        } catch{ }
         
         try{
             await this.driver.sleep(randomTime(600,900));
            var WEnoSuperLike =  await this.driver.findElement(By.xpath(WElements.WEnoSuperLike));
            await WEnoSuperLike.click();
-        }catch{
-            console.log('no se encontro el boton de superlike')
-        }
+        }catch{}
         finally{
             await this.driver.wait(until.elementLocated(By.xpath(WElements.WEcorazon)));
             let WEcorazon = await this.driver.findElement(By.xpath(WElements.WEcorazon));
@@ -125,10 +120,15 @@ Then('mandar corazones', async function () {
     
     for (var i=0; i<=mgAdar;i++){
         await this.driver.wait(until.elementLocated(By.xpath(WElements.WEcorazon)));
+        await this.driver.sleep(randomTime(1000));
         let WEcorazon = await this.driver.findElement(By.xpath(WElements.WEcorazon));
-        await this.driver.sleep(randomTime(300, 400));
         await WEcorazon.click();
         total++;
+
+        try{
+            var closeMatch = await this.driver.findElement(By.xpath(WElements.WEcloseMatch))
+            await WEcloseMatch.click();
+        }catch{}
     }
 }catch{
     console.log('hubo algun problema desconocido en la ejecucion');
