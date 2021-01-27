@@ -114,13 +114,22 @@ Then('mandar corazones', async function () {
             await WEcorazon.click();
             
         }
+        try{
+        let chamuyo = await this.driver.wait(until.elementLocated(By.xpath('//button[@type="submit"]')),350);
+        await chamuyo.sendKeys('Hola! todo bien?');
+        await chamuyo.sendKeys(Key.ENTER);
+        }catch{
+
+        }finally{
+            await this.driver.sleep(250)
+        }
         
     };
     console.log('finalizo el primer ciclo for');
     
     for (var i=0; i<=mgAdar;i++){
         await this.driver.wait(until.elementLocated(By.xpath(WElements.WEcorazon)));
-        await this.driver.sleep(randomTime(1000));
+        await this.driver.sleep(randomTime(350, 750));
         let WEcorazon = await this.driver.findElement(By.xpath(WElements.WEcorazon));
         await WEcorazon.click();
         total++;
@@ -129,6 +138,13 @@ Then('mandar corazones', async function () {
             var closeMatch = await this.driver.findElement(By.xpath(WElements.WEcloseMatch))
             await WEcloseMatch.click();
         }catch{}
+        try{
+            let chamuyo = await this.driver.wait(until.elementLocated(By.xpath('//button[@type="submit"]')),350);
+            await chamuyo.sendKeys('Hola! todo bien?');
+            await chamuyo.sendKeys(Key.ENTER);
+            }catch{
+    
+            }
     }
 }catch{
     console.log('hubo algun problema desconocido en la ejecucion');
